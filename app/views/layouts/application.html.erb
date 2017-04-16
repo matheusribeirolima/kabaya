@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Kabaya" %></title>
+    <%= favicon_link_tag 'sapato.png' %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <ul class="header-subnav">
+      <li class="style8"><%= link_to 'Com Fivela', fivelas_index_path %></li>
+      <li class="style8"><%= link_to 'Com Cadarço', cadarcos_index_path %></li>
+      <li class="style8"><%= link_to 'Botas', botas_index_path %></li>
+      <li><a href="/"><%=image_tag("logoa.jpg")%></a></li>
+      <li class="style8"><%= link_to 'Outros', outros_index_path %></li>
+      <li class="style8"><%= link_to 'Contatos', contatos_index_path %></li>
+      <li class="style8"><%= link_to 'Empresa', empresa_index_path %></li>
+    </ul>
+    
+    <%= yield %>
+    
+    <div class="large-14 columns" id="rodape">
+      <hr>
+      <h6>© Indústria e Comércio de Calçados Madri Ltda 2017</h6>
+    </div>
+  </body>
+</html>
